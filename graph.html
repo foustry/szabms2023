@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 750px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"col": 0, "color": "#3b4cc0", "id": "tighter emissions regulation", "label": "tighter emissions regulation", "row": 0, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "mining companies", "label": "mining companies", "row": 0, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": " commodities", "label": " commodities", "row": 2, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "commodity trading firms ", "label": "commodity trading firms ", "row": 4, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "industry-wide auto manufacturers", "label": "industry-wide auto manufacturers", "row": 5, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "idiosyncratic aspect- auto manufacturers", "label": "idiosyncratic aspect- auto manufacturers", "row": 8, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "carbon credit", "label": "carbon credit", "row": 10, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "Clean-tech companies", "label": "Clean-tech companies", "row": 11, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "Electronics industry", "label": "Electronics industry", "row": 13, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "Jewellery industry", "label": "Jewellery industry", "row": 14, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "Chemical industry", "label": "Chemical industry", "row": 15, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "electric vehicles", "label": "electric vehicles", "row": 16, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "renewable energy", "label": "renewable energy", "row": 21, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "metal recycling", "label": "metal recycling", "row": 25, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "clean/ green energy companies and etfs", "label": "clean/ green energy companies and etfs", "row": 26, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "waste collection and sorting firms ", "label": "waste collection and sorting firms ", "row": 45, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "agriculture", "label": "agriculture", "row": 46, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "currencies", "label": "currencies", "row": 48, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "equities", "label": "equities", "row": 49, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "em_bonds ", "label": "em_bonds ", "row": 50, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "cryptocurrencies", "label": "cryptocurrencies", "row": 51, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "emission testing", "label": "emission testing", "row": 52, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "carbon capture", "label": "carbon capture", "row": 53, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "air pollution control", "label": "air pollution control", "row": 54, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "energy efficiency", "label": "energy efficiency", "row": 55, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "fuel efficiency", "label": "fuel efficiency", "row": 56, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "hydrogen fuel cell", "label": "hydrogen fuel cell", "row": 57, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "battery technology", "label": "battery technology", "row": 58, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "battery metals", "label": "battery metals", "row": 59, "shape": "dot", "size": 10}, {"col": 1, "color": "#7b9ff9", "id": "commo etfs", "label": "commo etfs", "row": 65, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "PALLADIUM/PLATINUM/RHODIUM/RUTHENIUM/IRIDIUM/OSMIUM", "label": "PALLADIUM/PLATINUM/RHODIUM/RUTHENIUM/IRIDIUM/OSMIUM", "row": 0, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "NICKEL", "label": "NICKEL", "row": 1, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "AMS/IMP", "label": "AMS/IMP", "row": 1, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "energy sector", "label": "energy sector", "row": 2, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "inflation", "label": "inflation", "row": 3, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "fossil fuel", "label": "fossil fuel", "row": 2, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "oil/gas/coal", "label": "oil/gas/coal", "row": 2, "shape": "dot", "size": 10}, {"col": 5, "color": "#b40426", "id": "BP/XOM/ET/HCC", "label": "BP/XOM/ET/HCC", "row": 2, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "interest rates", "label": "interest rates", "row": 3, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "financial tightening", "label": "financial tightening", "row": 4, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "bonds", "label": "bonds", "row": 3, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "slower growth", "label": "slower growth", "row": 4, "shape": "dot", "size": 10}, {"col": 5, "color": "#b40426", "id": "equity volatility", "label": "equity volatility", "row": 4, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": " prices for consumers", "label": " prices for consumers", "row": 5, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "F/NIO/RIVN/LCID/GM/LI", "label": "F/NIO/RIVN/LCID/GM/LI", "row": 6, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "STLA/HMC/BLBD/TM/RACE/NWTN", "label": "STLA/HMC/BLBD/TM/RACE/NWTN", "row": 7, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "credit", "label": "credit", "row": 8, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "corporate bonds", "label": "corporate bonds", "row": 8, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "green bonds/fossil bonds", "label": "green bonds/fossil bonds", "row": 8, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "APTV/BWA/DLPH/LEA/MGA/TEN/VC", "label": "APTV/BWA/DLPH/LEA/MGA/TEN/VC", "row": 9, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "merger-acquisitions", "label": "merger-acquisitions", "row": 11, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "exhaust gas recirculation (EGR)", "label": "exhaust gas recirculation (EGR)", "row": 12, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "BWA DLPH/CMI/BOSCH LTD/DNZOY/CTTAY/VLEEY", "label": "BWA DLPH/CMI/BOSCH LTD/DNZOY/CTTAY/VLEEY", "row": 12, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "PALLADIUM/PLATINUM", "label": "PALLADIUM/PLATINUM", "row": 13, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "capacitors", "label": "capacitors", "row": 13, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "VSH/NNDM", "label": "VSH/NNDM", "row": 13, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "PALLADIUM", "label": "PALLADIUM", "row": 14, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "white gold alloys", "label": "white gold alloys", "row": 14, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "titanium", "label": "titanium", "row": 14, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "gold", "label": "gold", "row": 15, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "TSLA/MULN/NIO", "label": "TSLA/MULN/NIO", "row": 16, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "charging infrastructure related equipment", "label": "charging infrastructure related equipment", "row": 17, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "supply chain Lithium-ion batteries", "label": "supply chain Lithium-ion batteries", "row": 18, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "CHPT/BLNK/GE/ETN", "label": "CHPT/BLNK/GE/ETN", "row": 17, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "CBAT/MULN/QS/LTHM/RIO/SEDG/LAC/ALB/SQM/ASPN/PLL/CBT", "label": "CBAT/MULN/QS/LTHM/RIO/SEDG/LAC/ALB/SQM/ASPN/PLL/CBT", "row": 18, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "minerals", "label": "minerals", "row": 19, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "LITHIUM/COBALT SILVER/COPPER/ALLUMINIUM/NICKEL/ZINC/GRAPHITE/PLATINUM/PALLADIUM", "label": "LITHIUM/COBALT SILVER/COPPER/ALLUMINIUM/NICKEL/ZINC/GRAPHITE/PLATINUM/PALLADIUM", "row": 19, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "rare earth", "label": "rare earth", "row": 20, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "investors in", "label": "investors in", "row": 21, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "natural gas", "label": "natural gas", "row": 22, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "bio energy", "label": "bio energy", "row": 30, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "NEE/BEP/FSLR/ENPH/RUN", "label": "NEE/BEP/FSLR/ENPH/RUN", "row": 21, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "XOM/CHK/ET/BP/CTRA/DVN/EQT/MRO/KMI/AR/FTI/COP", "label": "XOM/CHK/ET/BP/CTRA/DVN/EQT/MRO/KMI/AR/FTI/COP", "row": 22, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "sugar cane/corn/soybean/vegetable oil/animal fats/switchgrass", "label": "sugar cane/corn/soybean/vegetable oil/animal fats/switchgrass", "row": 23, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "AQN/CEG", "label": "AQN/CEG", "row": 24, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "cathode/anode/battery materials", "label": "cathode/anode/battery materials", "row": 25, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "LICY", "label": "LICY", "row": 25, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "nuclear energy", "label": "nuclear energy", "row": 26, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "renewable natural gas (RNG)", "label": "renewable natural gas (RNG)", "row": 29, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "wind power", "label": "wind power", "row": 31, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "hydro power", "label": "hydro power", "row": 32, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "solar power", "label": "solar power", "row": 33, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "geothermal energy", "label": "geothermal energy", "row": 34, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "tidal power", "label": "tidal power", "row": 35, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "UEC/CCJ", "label": "UEC/CCJ", "row": 26, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "uranium", "label": "uranium", "row": 27, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "nuclear waste management", "label": "nuclear waste management", "row": 28, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "GE/FLR/PSN/CEG", "label": "GE/FLR/PSN/CEG", "row": 28, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "KMI", "label": "KMI", "row": 29, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "wave power", "label": "wave power", "row": 36, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "fuel cell", "label": "fuel cell", "row": 37, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "blue hydrogen", "label": "blue hydrogen", "row": 38, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "green hydrogen", "label": "green hydrogen", "row": 39, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "sustainable biomass", "label": "sustainable biomass", "row": 40, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "waste biogas", "label": "waste biogas", "row": 41, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "biofuels", "label": "biofuels", "row": 42, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "biomass conversion", "label": "biomass conversion", "row": 44, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "waste cooking oil/agricultural waste/corn stover/wheat straw/rice husks", "label": "waste cooking oil/agricultural waste/corn stover/wheat straw/rice husks", "row": 45, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "sustainable ethanol", "label": "sustainable ethanol", "row": 42, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "biodiesel", "label": "biodiesel", "row": 43, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "fertilisers/pesticides", "label": "fertilisers/pesticides", "row": 46, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "potash/ammonia/MOS/BHP/NTR/ICL", "label": "potash/ammonia/MOS/BHP/NTR/ICL", "row": 47, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "ICL/CF", "label": "ICL/CF", "row": 46, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "ZAR/CAD/EUR/RUB/AUD", "label": "ZAR/CAD/EUR/RUB/AUD", "row": 48, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "DJIA/DAX/EWG/EZA/RSX", "label": "DJIA/DAX/EWG/EZA/RSX", "row": 49, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "IEMG/SOAF", "label": "IEMG/SOAF", "row": 50, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "AEHR", "label": "AEHR", "row": 52, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "BW/GE", "label": "BW/GE", "row": 54, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "JCI/HON/TT/CREE/OSIS/AYI/CLNE", "label": "JCI/HON/TT/CREE/OSIS/AYI/CLNE", "row": 55, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "TSLA/TM/F/GM/HMC/CMI", "label": "TSLA/TM/F/GM/HMC/CMI", "row": 56, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "DAN/MATW/PBF/WAB/PLUG/BLDP", "label": "DAN/MATW/PBF/WAB/PLUG/BLDP", "row": 57, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "STEM/MGY/QS/ALB", "label": "STEM/MGY/QS/ALB", "row": 58, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "lithium/nickel/graphite/copper/aluminium", "label": "lithium/nickel/graphite/copper/aluminium", "row": 59, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "ALB/LTHM/SQM/FCX/VALE/BHP GLEN/VALE/BHP/FCX/AA/CENX/TECK/HBM/NOK/CSTM", "label": "ALB/LTHM/SQM/FCX/VALE/BHP GLEN/VALE/BHP/FCX/AA/CENX/TECK/HBM/NOK/CSTM", "row": 60, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "UMI", "label": "UMI", "row": 61, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "cobalt/manganese/vanadium/zinc", "label": "cobalt/manganese/vanadium/zinc", "row": 63, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "AAPL/SAMSUNG/TSLA/BA/UTX/MDT/ABT/LMT/RTX/GM/F", "label": "AAPL/SAMSUNG/TSLA/BA/UTX/MDT/ABT/LMT/RTX/GM/F", "row": 62, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "steel/stainless steel/vanadium redox batteries", "label": "steel/stainless steel/vanadium redox batteries", "row": 63, "shape": "dot", "size": 10}, {"col": 3, "color": "#f2cbb7", "id": "CLF/X/NUE/STLD/MT/ASTL/SID", "label": "CLF/X/NUE/STLD/MT/ASTL/SID", "row": 64, "shape": "dot", "size": 10}, {"col": 2, "color": "#c0d4f5", "id": "PPLT", "label": "PPLT", "row": 65, "shape": "dot", "size": 10}, {"col": 4, "color": "#ee8468", "id": "ACNT/ATI/CIX/ZEUS", "label": "ACNT/ATI/CIX/ZEUS", "row": 63, "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"from": "tighter emissions regulation", "to": "mining companies", "width": 1}, {"from": "tighter emissions regulation", "to": " commodities", "width": 1}, {"from": "tighter emissions regulation", "to": "commodity trading firms ", "width": 1}, {"from": "tighter emissions regulation", "to": "industry-wide auto manufacturers", "width": 1}, {"from": "tighter emissions regulation", "to": "idiosyncratic aspect- auto manufacturers", "width": 1}, {"from": "tighter emissions regulation", "to": "carbon credit", "width": 1}, {"from": "tighter emissions regulation", "to": "Clean-tech companies", "width": 1}, {"from": "tighter emissions regulation", "to": "Electronics industry", "width": 1}, {"from": "tighter emissions regulation", "to": "Jewellery industry", "width": 1}, {"from": "tighter emissions regulation", "to": "Chemical industry", "width": 1}, {"from": "tighter emissions regulation", "to": "electric vehicles", "width": 1}, {"from": "tighter emissions regulation", "to": "renewable energy", "width": 1}, {"from": "tighter emissions regulation", "to": "metal recycling", "width": 1}, {"from": "tighter emissions regulation", "to": "clean/ green energy companies and etfs", "width": 1}, {"from": "tighter emissions regulation", "to": "waste collection and sorting firms ", "width": 1}, {"from": "tighter emissions regulation", "to": "agriculture", "width": 1}, {"from": "tighter emissions regulation", "to": "currencies", "width": 1}, {"from": "tighter emissions regulation", "to": "equities", "width": 1}, {"from": "tighter emissions regulation", "to": "em_bonds ", "width": 1}, {"from": "tighter emissions regulation", "to": "cryptocurrencies", "width": 1}, {"from": "tighter emissions regulation", "to": "emission testing", "width": 1}, {"from": "tighter emissions regulation", "to": "carbon capture", "width": 1}, {"from": "tighter emissions regulation", "to": "air pollution control", "width": 1}, {"from": "tighter emissions regulation", "to": "energy efficiency", "width": 1}, {"from": "tighter emissions regulation", "to": "fuel efficiency", "width": 1}, {"from": "tighter emissions regulation", "to": "hydrogen fuel cell", "width": 1}, {"from": "tighter emissions regulation", "to": "battery technology", "width": 1}, {"from": "tighter emissions regulation", "to": "battery metals", "width": 1}, {"from": "tighter emissions regulation", "to": "commo etfs", "width": 1}, {"from": "mining companies", "to": "PALLADIUM/PLATINUM/RHODIUM/RUTHENIUM/IRIDIUM/OSMIUM", "width": 1}, {"from": "mining companies", "to": "NICKEL", "width": 1}, {"from": "NICKEL", "to": "AMS/IMP", "width": 1}, {"from": " commodities", "to": "energy sector", "width": 1}, {"from": " commodities", "to": "inflation", "width": 1}, {"from": "energy sector", "to": "fossil fuel", "width": 1}, {"from": "fossil fuel", "to": "oil/gas/coal", "width": 1}, {"from": "oil/gas/coal", "to": "BP/XOM/ET/HCC", "width": 1}, {"from": "inflation", "to": "interest rates", "width": 1}, {"from": "inflation", "to": "financial tightening", "width": 1}, {"from": "interest rates", "to": "bonds", "width": 1}, {"from": "financial tightening", "to": "slower growth", "width": 1}, {"from": "slower growth", "to": "equity volatility", "width": 1}, {"from": "industry-wide auto manufacturers", "to": " prices for consumers", "width": 1}, {"from": "industry-wide auto manufacturers", "to": "F/NIO/RIVN/LCID/GM/LI", "width": 1}, {"from": "idiosyncratic aspect- auto manufacturers", "to": "STLA/HMC/BLBD/TM/RACE/NWTN", "width": 1}, {"from": "idiosyncratic aspect- auto manufacturers", "to": "credit", "width": 1}, {"from": "credit", "to": "corporate bonds", "width": 1}, {"from": "corporate bonds", "to": "green bonds/fossil bonds", "width": 1}, {"from": "corporate bonds", "to": "APTV/BWA/DLPH/LEA/MGA/TEN/VC", "width": 1}, {"from": "Clean-tech companies", "to": "merger-acquisitions", "width": 1}, {"from": "Clean-tech companies", "to": "exhaust gas recirculation (EGR)", "width": 1}, {"from": "exhaust gas recirculation (EGR)", "to": "BWA DLPH/CMI/BOSCH LTD/DNZOY/CTTAY/VLEEY", "width": 1}, {"from": "Electronics industry", "to": "PALLADIUM/PLATINUM", "width": 1}, {"from": "PALLADIUM/PLATINUM", "to": "capacitors", "width": 1}, {"from": "capacitors", "to": "VSH/NNDM", "width": 1}, {"from": "Jewellery industry", "to": "PALLADIUM", "width": 1}, {"from": "PALLADIUM", "to": "white gold alloys", "width": 1}, {"from": "white gold alloys", "to": "titanium", "width": 1}, {"from": "white gold alloys", "to": "gold", "width": 1}, {"from": "electric vehicles", "to": "TSLA/MULN/NIO", "width": 1}, {"from": "electric vehicles", "to": "charging infrastructure related equipment", "width": 1}, {"from": "electric vehicles", "to": "supply chain Lithium-ion batteries", "width": 1}, {"from": "charging infrastructure related equipment", "to": "CHPT/BLNK/GE/ETN", "width": 1}, {"from": "supply chain Lithium-ion batteries", "to": "CBAT/MULN/QS/LTHM/RIO/SEDG/LAC/ALB/SQM/ASPN/PLL/CBT", "width": 1}, {"from": "minerals", "to": "LITHIUM/COBALT SILVER/COPPER/ALLUMINIUM/NICKEL/ZINC/GRAPHITE/PLATINUM/PALLADIUM", "width": 1}, {"from": "renewable energy", "to": "minerals", "width": 1}, {"from": "renewable energy", "to": "rare earth", "width": 1}, {"from": "renewable energy", "to": "investors in", "width": 1}, {"from": "renewable energy", "to": "natural gas", "width": 1}, {"from": "renewable energy", "to": "bio energy", "width": 1}, {"from": "investors in", "to": "NEE/BEP/FSLR/ENPH/RUN", "width": 1}, {"from": "natural gas", "to": "XOM/CHK/ET/BP/CTRA/DVN/EQT/MRO/KMI/AR/FTI/COP", "width": 1}, {"from": "bio energy", "to": "sugar cane/corn/soybean/vegetable oil/animal fats/switchgrass", "width": 1}, {"from": "bio energy", "to": "AQN/CEG", "width": 1}, {"from": "metal recycling", "to": "cathode/anode/battery materials", "width": 1}, {"from": "cathode/anode/battery materials", "to": "LICY", "width": 1}, {"from": "clean/ green energy companies and etfs", "to": "nuclear energy", "width": 1}, {"from": "clean/ green energy companies and etfs", "to": "renewable natural gas (RNG)", "width": 1}, {"from": "clean/ green energy companies and etfs", "to": "bio energy", "width": 1}, {"from": "clean/ green energy companies and etfs", "to": "wind power", "width": 1}, {"from": "clean/ green energy companies and etfs", "to": "hydro power", "width": 1}, {"from": "clean/ green energy companies and etfs", "to": "solar power", "width": 1}, {"from": "clean/ green energy companies and etfs", "to": "geothermal energy", "width": 1}, {"from": "clean/ green energy companies and etfs", "to": "tidal power", "width": 1}, {"from": "nuclear energy", "to": "UEC/CCJ", "width": 1}, {"from": "nuclear energy", "to": "uranium", "width": 1}, {"from": "nuclear waste management", "to": "GE/FLR/PSN/CEG", "width": 1}, {"from": "renewable natural gas (RNG)", "to": "nuclear waste management", "width": 1}, {"from": "renewable natural gas (RNG)", "to": "KMI", "width": 1}, {"from": "waste collection and sorting firms ", "to": "wave power", "width": 1}, {"from": "waste collection and sorting firms ", "to": "fuel cell", "width": 1}, {"from": "waste collection and sorting firms ", "to": "blue hydrogen", "width": 1}, {"from": "waste collection and sorting firms ", "to": "green hydrogen", "width": 1}, {"from": "waste collection and sorting firms ", "to": "sustainable biomass", "width": 1}, {"from": "waste collection and sorting firms ", "to": "waste biogas", "width": 1}, {"from": "waste collection and sorting firms ", "to": "biofuels", "width": 1}, {"from": "waste collection and sorting firms ", "to": "biomass conversion", "width": 1}, {"from": "waste collection and sorting firms ", "to": "waste cooking oil/agricultural waste/corn stover/wheat straw/rice husks", "width": 1}, {"from": "biofuels", "to": "sustainable ethanol", "width": 1}, {"from": "biofuels", "to": "biodiesel", "width": 1}, {"from": "agriculture", "to": "fertilisers/pesticides", "width": 1}, {"from": "agriculture", "to": "potash/ammonia/MOS/BHP/NTR/ICL", "width": 1}, {"from": "fertilisers/pesticides", "to": "ICL/CF", "width": 1}, {"from": "currencies", "to": "ZAR/CAD/EUR/RUB/AUD", "width": 1}, {"from": "equities", "to": "DJIA/DAX/EWG/EZA/RSX", "width": 1}, {"from": "em_bonds ", "to": "IEMG/SOAF", "width": 1}, {"from": "emission testing", "to": "AEHR", "width": 1}, {"from": "air pollution control", "to": "BW/GE", "width": 1}, {"from": "energy efficiency", "to": "JCI/HON/TT/CREE/OSIS/AYI/CLNE", "width": 1}, {"from": "fuel efficiency", "to": "TSLA/TM/F/GM/HMC/CMI", "width": 1}, {"from": "hydrogen fuel cell", "to": "DAN/MATW/PBF/WAB/PLUG/BLDP", "width": 1}, {"from": "battery technology", "to": "STEM/MGY/QS/ALB", "width": 1}, {"from": "battery metals", "to": "lithium/nickel/graphite/copper/aluminium", "width": 1}, {"from": "lithium/nickel/graphite/copper/aluminium", "to": "ALB/LTHM/SQM/FCX/VALE/BHP GLEN/VALE/BHP/FCX/AA/CENX/TECK/HBM/NOK/CSTM", "width": 1}, {"from": "lithium/nickel/graphite/copper/aluminium", "to": "UMI", "width": 1}, {"from": "cobalt/manganese/vanadium/zinc", "to": "AAPL/SAMSUNG/TSLA/BA/UTX/MDT/ABT/LMT/RTX/GM/F", "width": 1}, {"from": "cobalt/manganese/vanadium/zinc", "to": "steel/stainless steel/vanadium redox batteries", "width": 1}, {"from": "cobalt/manganese/vanadium/zinc", "to": "CLF/X/NUE/STLD/MT/ASTL/SID", "width": 1}, {"from": "commo etfs", "to": "cobalt/manganese/vanadium/zinc", "width": 1}, {"from": "commo etfs", "to": "PPLT", "width": 1}, {"from": "steel/stainless steel/vanadium redox batteries", "to": "ACNT/ATI/CIX/ZEUS", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
