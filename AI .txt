@@ -1,0 +1,168 @@
+AI: Productivity, Democracy, Power and Truth 
+
+
+In meetings with CIOs, asset allocators and strategists around the world this year the debate as often raged about whether we find ourselves in a new investment regime. We have laid out the case in recent research that deglobalization, demographics and climate change acting in concert raise the prospect of higher inflation and lower real growth. The question that frequently comes back across the table in meetings is “yes but what about AI?”. The suggestion implicit in this question is whether AI begets lower inflation and has the potential to increase growth to enough of an extent to offset these forces. 
+Could AI be like the advent of steam engine and lift growth and productivity in a transformational way? Or maybe the printing press is a better analogy in bringing about a broader social and intellectual metamorphosis in human interaction with the world? A potentially bleaker interpretation is one that has Marxist overtones about the power of capital vs labour and change in social structures. This is most clearly not a story that is demarcated as a quant, tech or coding issue. The topic is ultimately political, social and philosophical. This has implications for strategic investment. 
+The focus here the macro implications. We take a broad interpretation of the word “macro”. There are economic, social and epistemological implications of AI. We would argue that none of these can be ignored in finance, at least not in the domain in setting strategic asset allocation which ultimately always requires one to take a view on political and social forces. We would go as far as to say it would be naïve to leave out such views when setting long run expectations. 
+
+The other key macro concern is inflation –demographic change and deglobalization, climate change and the S in ESG are all inflationary could AI offset those inflationary forces?
+
+The difficulty is to balance near-term forces that could well create an upward trajectory for growth vs others that take into account distribution effects, social and geopolitical impacts that are potentially more negative. Maybe just another tech development… then social/political structures determine… but also AI could potentially change those structures. Financial markets do a terrible job of pricing big, existential and very bad outcomes ahead of time… history of ERP… 
+[Machine learning vs AI…. ]
+Place the AI debate in the context of prior developments in technology. Afterall, automation has a long history and within that actual automota that approximate human behaviour have always had a particular fascination. It seems appropriate that the Scottish Ballet’s masterful restaging of Coppelia at Saddlers Wells was an immersive AI experience. The familiar story of the doll automata lends itself well to this contemporary retelling. The boundaries between human dancers and automota dancers blurs. The questioning subtitle that was added to the performance was “what does it mean to be human?”
+Display 1: A reinvented Coppelia for the AI age
+
+ 
+Ref: The Scottish Ballet at Saddlers Wells
+
+
+Aggregate Growth
+One of the core inputs for arriving at any view of strategic allocation is the prognosis for long term economic growth. We have pointed out in recent research [ref triumvirate note], that the combination of a falling working age population (ex Africa and parts of South Asia), the likelihood of deglobalization and the need to pay a price for energy that more accurately reflects negative externalities implies a future of lower growth vs that which has prevailed since the early 1980s. The impact and extent of deglobalization can be argued, as can the impact on growth of climate change, but the case for demographic impact seems most clear. A smaller number of workers suggests, ceteris paribus, lower growth. 
+However, in recent meetings with clients this is nearly ubiquitously followed by the question, “but what about AI?”. The mass rollout of generative AI over the last year has led many to ask whether a new source of growth is at hand that it large enough to overturn these other macro forces. Well maybe. There is no evidence either way. Forecasts for the impact of AI on growth are all over the place. There is nothing that new about this. There has been an inability to forecast changes in productivity for long time, possibly since the concept was invented. 
+We suggest a perhaps more fruitful approach for the moment is to reverse engineer the problem and ask what change in productivity growth would be needed to offset the triumvirate of mega forces: deglobalization, demographics and climate change. 
+[Robertas pls can you put in a para here that says what the impact would have to be , maybe with a table using the data from the triumvirate note please and then linking it to the chart of the historical range of productivity thank you ]
+…. So in the context of the range of productivity that has been achieved in the US since the war, the required increase is possible but at the top end of the historical range and hence would have to be significant. So in theory possible but how likely? (and with what likelihood that the time frame can be accurately predicted?).
+[Productivity range chart from triumvirate note]
+
+The difficulty is that recent improvement in automation has failed to show up in productivity statistics. It is too early to see an impact of AI specifically, but given the advances in tech in recent years and huge investment in automation (during the pandemic alone a XX increase in demand for robots) one would have thought that they would show up as an increase in productivity. [compare productivity since 1980 with average from 1945-80] 
+This is likely a measurement problem… GDP as a poor measure for quality of life [link to Eric?]. However this matters if there is going to be an attempt to forecast the aggregate growth potential from AI in the context of other forces acting at the same time. This also touches on another theme that runs though this note, what is the motivating animus of AI deployment? Is it to boost aggregate growth, quality-of-life improvements, or merely another profit-maximizing exercise for the corporate sector? 
+
+What was the impact of the steam engine on aggfdgate growth per capita?… long run charts…
+Landes + farewell to alms ref
+[need charts here]
+
+
+Impact of AI on the Cross-Section
+It may be possible to make a case that AI boosts growth in aggregate, the jury is still out but the pervious section suggests that is indeed a possibility. The worry is more acute in the cross-section however, particularly in net changes in the distribution of wealth and wages. There are a few distinct elements to this:
+The last 20 years of tech development has already contributed to wealth inequality due to the skewed ownership of the stock market. Another leg higher in listed tech companies from AI benefits would perpetuate that. To the extent that new AI developments are progressively more likely to emerge from private equity-backed companies this is further magnified as the beneficiaries are likely to be an even narrower group. Of course things are never as black and white as that as to the extent that pension plans, especially in the US, have invested in private equity that can socialize the benefit. The difficulty comes if the expansion in profits from AI come either from eliminating jobs or from exploiting social data that is arguably part of the Commons, on which more below.
+Job destruction is often the immediate worry expressed when AI is discussed in meetings. AI evangelists would rightly point out that there is a long history or technological developments displacing jobs or even eliminating whole categories of jobs from mechanical looms, to cars, electronic calculating machines and the internet. There is the famous injunction issued by Elizabeth I banning looms as it would put weavers out of work [reference needed]. 
+Despite the long history or worries about automation destroying jobs but there has not been a trend increase in unemployment over the last century. Autor in a well-named paper “Why Are There Still So Many Jobs?” [Autor (2015)] makes the positive argument that automation compliments labour to raise growth overall and hence, ultimately, the demand for labour.More on this point…. 
+
+Ideally data on speed of job destruction now vs, say, mechanical agricultural equipment. Meaningfully different speed of change compared to an individuals working life span… not possible to retrain
+
+Case of bank tellers 
+
+Automation as Utopia or Dystopia?
+The debate on the role of AI in society and for economies overall is giving birth to a wave of new publications. Henry Kissinger has teamed up with Eric Schmidt, the former Google CEO, and Daniel Huttenlocher (MIT college of computing) to opine on the impact this will have on society at large (Kissinger et al (2022)). The gravitas of the authors is unimpeachable, though as with other books written by committee it is a dry read. They offer views from across their considerable domains of experience, but your reviewer came away with an overall sense of a depressing prognosis for the future. The book correctly points out that previous waves of technology have displaced workers but that societies ultimately adapted and were better off. With a nod to the possibility that the disruption could be faster this time they allude to the idea that societies “need to be ready to supply the displaced not only with alternative sources of income but also with alternative sources of fulfillment”.
+They discuss the ability of generative AI to crease falsehoods that are indistinguishable from reality and creating the impression of people doing or saying things that they have never done and said. They conclude that without checks this will likely “blur the line between reality and fantasy”. The biggest claim in the book is a fundamental statement of epistemology. They point out that throughout human history there have been two routes to attempt to understand the world: faith and reason. Their claim is that AI adds a third. The extent to which this is the case can be debated. It could be argued that knowledge gained though AI is an extension of reason. However, this is linked to the concept of “explanation”. If an AI process uses a highly complex patten between datapoints that is not easily rendered into model that is intelligible by humans then we may say that the AI process does not offer explanation (even if it is effective at prediction). That offers a route to knowledge that is distinct from a traditional approach to reason. 
+The section on world order, presumably penned by Kissinger, is possibly the most depressing part of the work. The potential role of AI in geopolitics is compared to the invention of nuclear weapons as a technological advance that has the potential to change the world order and the way that states interact. However, unlike with nuclear weapons there is no established concept of deterrence with AI, indeed basic attributes of conflict are now open to debate such as whether a conflct has even begun, with whom and how far up the escalation ladder the conflict may be. They conclude that Ai increases the inherent risk of preemption and premature use escalating into conflict. When conflict starts it is set to become much more unpredictable as participants may be up against tactics and strategy determined by non-human actors. 
+Berardi response to Kissinger
+The emergence of AI can be placed in a long line of technological developments which have had a macroeconomic impact, resulted in a change to society or altered the nature of jobs available. Acemoglu has surveyed this history from the point of view of the impact that technological advancements have on the distribution of power in society [footnote: Acemoglu et al 2023)]. They suggest that “a thousand years of history and contemporary evidence make one thing abundantly clear: there is nothing automatic about new technologies bringing widespread prosperity. Whether they do or not is an economic, social, and political choice”. Thus it is not AI itself that necessarily changes the distribution of wealth in society, but the social and political milieu in which it evolves. 
+The productivity puzzle is discussed at length. The huge advances in automation to date have so far failed to show up in an increase in productivity. They point out that total factor productivity in US since 1980 has been less than 0.7% pa vs 2.2% pa 1940s-70s
+
+Yet, again the harmful impact of AI for societal structures receives a lot of attention, in particular the impact that AI can have on distribution misinformation and extremism. The conclusion that the book reaches on this point is that the current path of AI is neither good for democracy nor for the economy, and that these are mutually reinforcing. 
+Crawford’s Atlas of AI [Crawford 2021] urges us to see AI as an extractive industry, particularly because of its exploitation of cheap labour and data at scale, but also extraction in a more traditional sense of required energy use and raw minerals for the required infrastructure. Thus AI needs to be seen as fundamentally political and part of the structure of power in contemporary society. 
+The issue of extracting value from the use of digital infrastructure has been raised before. For example Fuchs [ref] suggests that this can be placed in the context of the Marxist view of labour. When people are contributing to, scrolling through or otherwise engaging with social media that are (probably unwittingly) undertaking labour in a strict Marxist sense. A more vernacular way of phrasing this might be the saying: If you are not paying for the product then you are the product 
+Placing this in the context of the history of innovation, Crawford likens the current societal approach to framing of AI to the “ strategic amnesia that commonly accompanies stories of technological progress”. Rather than viewing AI as an inscrutable tech-led way to view the world, we are urged instead to view AI as a system that is the product of social and economic structure with profound material consequences.
+Part of this narrative of extraction is the view that the tech sector is pervaded by the notion that “everything is data”. Context has somehow been relegated as seemingly unimportant and expunged. This leads to the view that the tech sector’s use of data essentially amounts to a capture of the Commons by commercialized interests. Crawford concludes that AI as we see it today is the result of the entanglement of technology, capital and power which are the products of our social structure. The book ends with a call for a new politics of refusal that challenges any narratives of technological inevitability by asking why AI should be applied in a given domain. 
+Aside from the socio-political aspects of AI, Crawford also touches on some of the epistemological issues raised by it. She refers to this as the “epistemological flattening” of complexity into a “clean signal” for the purposes of prediction. The chapter on classification raises the question of “what is a noun”, which can be loaded with social questions of bias. 
+Education is often suggested as the way out from the risk of mass joblessness due to automation. Quite aside from the stagnation of improvements on that score in recent times in such countries as the US and UK, Ford’s Rise of the Robots, suggests that there are clear limits to what can be achieved though education. He suggests that it is analogous to believing that “in the wake of the mechanization of agriculture, the majority of displaced farm workers would be abel to find jobs driving tractors”. This leads Ford to suggest that in the face of AI that there is a strong economic case for universal basic income. 
+This book also opines on the productivity puzzle suggesting that much of this apparent puzzle is due to suppressed growth, the blame for which he lays with inequality. Ford is far from alone in railing against the excessive quantification of economics as a field. The consequence is that it makes if very poor at modelling structural changes in regime that are outside the experience of past data. [foonote: We suggest a similar issue arises in investment as well. See  ref why I am no longer a quant”]
+
+Other books here 
+
+Crawford, Acemoglou and Kissinger all point to an interpretation of the impact of AI as inextricable from politics. In all the hype and seeming inevitability of AI the common theme in these works is that AI is a function of social structures about which there is a choice. We would agree. This is important in weighing up the conflicting structural consequences of increased adoption of AI. On the one hand there is the positive narrative of higher growth as a consequence of a potential increase in productivity. Set against that is the risk to growth of unemployment and an even greater potential for second-order effects on society from the narrowness of net wealth creation and risks to social structures. It is this tension that underlies much of the macro debate on AI that runs though this note. 
+
+
+Srnicek, Keynes…  less need for work? post capitalism literature  etc
+Does AI imply universal basic income? Para  on this….
+A final point we would make in this section is that we are struck that writing on this topic, from the point of view of finance at least, often seems to miss the inherent endogeneity of all this. The purpose of most investing in the first place, is ultimately to meet some objective, “liability” of you will, in the real economy. The main one of which is to fund retirement.  What does the social impact of AI mean for the concept of retirement (and hence the retirement saving industry?)
+Does AI undo the retirement model? Discuss…….
+
+
+Concentration of returns: active, passive and risk
+Does this cement the concentration of returns?
+Q: Are periods of higher growth inherently periods of greater market concentration? 
+….. market concentration and performance of active… is good for active [chart] unless is the biggest stocks. Argument for passive but also passive becomes more concentrated.
+Aggregate risk measures become less meaningful [eg efficacy of CSI when its really about 5 stocks….]
+
+Cementing the power of Corporates vs Governments and Labour?
+Last 40 years has seen erosion of government power vs corporates… deglobalsiation and other backlash seems set to somewhat reverse this but AI could plausibly make corporates even more powerful again. Great for owners of capital but what would that mean for society…. Regulation is very lagged…. Why should CEOs of private companies get to decide this stuff? Berardi…… impact on society, on democracy
+Corporations getting to decide on direction of technology at present..
+Need a long run chart of profit share – or failing that earnings gth “in excess of” GDP gth. Globalisation and neo-liberal victory since 1980 was possibly period that saw greatest period of corporate power vs governments. Previous period possibly Edwardian? (Standard Oil etc). just when deglobalization and the backlash against late stage capitalsm was poised to tip balance in favour of labour could AI perpetuate corporate power? Huge implications for a) margins b) for what KIND of AI is pursued.
+Is this primarily an issue in the West? In China it plausibly might not strengthen cororpates? 
+Acemoglu suggestions for redirectioing Technology: unionisaiton, subsidies for socially useful tech, tax reform so as not to favour automation, governments need to be involved to direct tech change, data ownership [but he rejects UBI]
+
+
+
+Worker power matters
+The jobs that ai might disrupt tend to be significantly less unionized than equivalent jobs that were disrupted by automation ;last 50 year.
+Maybe more akin to automation of agri jobs where labour was very unfree ? 
+Acemoglu (21) points out most wages today are negotiated , not really set only by market forces
+Acemoglu .(37, 259) last few decades focus was on automating work, as opposed to shared prosperity. This was not inevitable but was because of lack of pressure from workers, lack of regulation 
+
+ 
+
+AI, the Enlightenment and the meaning of Truth
+There are bigger forces at work here too which are too often overlooked in finance and investment. Beyond the economic and social implications of AI there are epistemological implications too. Kissinger suggests that while throughout human history, reason and faith have been the two paths to understand the world, two paths to “truth” if one will. He suggests that AI is now a third route. This is a massive claim which huge implications. This suggesting points to the possibility that AI can uncover patterns that are not recognizable by humans and use them to make predictions that could not otherwise have been made. The ability to make novel predictions being one of the possible tests of an activity being “science-like” in nature [footnote: but see our discussion of the limits to this in finance in, ref [can there be scientific method in finance?]] . Leaving aside the issue of whether such a process could fit the definition of what counts as an explanation there are tangible examples already of such prediction being made in AI in a way that was not possible, or at least radically more time consuming and costly, if done by humans [eg protein analysis example]. 
+In more practical terms there is the potential for AI to change the way that individuals find out about the world and hence what political or social views that they form. Layered on top of this is how these views are open to being manipulated by “deep fakes”. There is a risk in such a world that it is harder to agree across society on basic factual tenets that underpin debate. 
+Use of words “truth” and “evidence” have been in decline, Displays X and Y. To be clear, this is not the fault of AI.  it even pre-dates social media. The fragmenting of societal discussion and the emergence of the oxymoronic term “my truth” in this sense appears to reflect a societal change that was already underway, at least in the English-speaking world before the latest developments in technology [footnote: see ref our note on truth and the Enlightenment]
+
+Display X: Use of the word “Evidence” has declined
+ 
+Note: Chart shows how usage of the word "evidence" has changed over time. Google Ngram Viewer is a tool that lets users search for the frequency of word/phrase use in Google's library of books published in the period 1600-2019, containing over 5 million scanned books.
+
+
+Source: Google NGRAM and AB
+
+
+
+
+
+Display X: Use of the word “Fact” has declined
+
+ 
+Note: Chart shows how usage of the word "fact" has changed over time. Google Ngram Viewer is a tool that lets users search for the frequency of word/phrase use in Google's library of books published in the period 1600-2019, containing over 5 million scanned books.
+
+
+Source: Google NGRAM and AB
+
+Role of AI with the meaning of truth….. 
+Is AI compatible with enlightenment role of humanity and meaning of truth? 
+Berardi also brings up the role of AI in challenging the Enlightment - https://www.e-flux.com/notes/526496/unheimlich-the-spiral-of-chaos-and-the-cognitive-automaton - is it this the logical consequence of the Enlightenment in a trans-cultural sense?
+Is AI-driven social media compatible with democracy? Leads to more populism? Fragmenting of what people mean by truth?  Here is a thought: If there had been AI tools available in the Agora would the Athenians have invented democracy?
+How does the meaning of truth change?
+Bringing this back to finance… one clear impact is on election cycle risk… but also to Kissinger’s point we highlighted earlier some of the basic factors of geopolitics such as “has a conflict broken out or not” now become moot….
+Link to the equity risk premium and GPR chart
+
+
+
+What does this mean for investment?
+Economics (and SAA) always comes down to politics in the end. We would argue that an innovation such as AI, as with other technological developments, does not pre-determine a given economic outcome. That outcome rests more with social and political choices that are made with respect to AI. 
+
+
+Macro variables
+-	Potential to offset declining aggregate growth from other macro mega forces.
+-	Potential to offset inflationary forces
+-	Huge uncertainty about this that wont be known for years
+-	Worry about cross-sectional and social impact on wealth concentration, job destruction, social and political stability. 
+-	Power of corporates vs governments 
+
+Markets
+-	Bullish for equities and VC. In stark contrast to recent fall in LTG expectations
+-	Reinforces case for US>other regions [?]
+-	Bigger risks around elections? But markets are very bad at pricing this kind of risk, so likely to be unpriced until something breaks
+-	Further moves the active/passive boundary. We have long made the point that the distinction between what constitutes active and passive within an asset class is a moving boundary and not something that is set in stone [references…]. Smart beta was first step, one can easily imagine an AI-infused smart beta as next step. NB that is very different from saying that AI can be effectively used in active investment decisions – clients wont stand for it. 
+
+
+
+US aggregate earnings:
+Equity market implications: biggest direct impact on tech, what do current growth expectations imply for future profit share of Tech? in 1999 those expectations were unreasonable, are they more reasonable now?
+Some sectors unaffected – eg Energy/mining/Utilities, staples. Others like retail probably challenged. 
+Banks just continue to strategically decline anyway (not really AI driven). What does this mean for potential US corporate earnings growth. 
+Conclusion on 1) tech share of profits 2) US equity valuation
+most of tech growth last few decades driven by goal to maximize profits – eg lots of useless product upgrades etc many not obvious link to social benefit., no reason to think AI any different. 
+
+
+Tension between the potential uploft to growth – vs the threat from unemplpyment and second order social effects. Risk assets do a much better job at pricing, or rather incorporating,  the former than the latter…. 
+
+Bibliography
+Acemoglu et al (2023)
+
+Autor (2015): Why Are There Still So Many Jobs? The History and Future of Workplace Automation https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.29.3.3
+
+Berardi 
+Crawford [2021] 
+Ford’s Rise of the Robots
+Fuchs (XXXX): Digital labour and Karl Marx
+Kissinger et al (2022).
